@@ -1,3 +1,0 @@
-<div>
-  <%= raw(documentation(@conn)) %>
-</div>
