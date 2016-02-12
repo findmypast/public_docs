@@ -6,6 +6,7 @@ deps
 *.ez
 *.tgz
 *.log
+
 deploymentScripts/node_modules
 
 # Generate on crash by the VM
@@ -17,9 +18,11 @@ erl_crash.dump
 # Alternatively, you may comment the line below and commit the
 # secrets file as long as you replace its contents by environment
 # variables.
-/x_search_api/rel
-/x_search_api/config/prod.secret.exs
-/x_search.api/priv/static/*.gz
-/x_search_api/priv/static/manifest.json
-/x_search_api/priv/static/js/*.gz
-/x_search_api/priv/static/js/*-*.js
+/public_docs/rel
+/public_docs/config/prod.secret.exs
+/public_docs/priv/static/*.gz
+/public_docs/priv/static/manifest.json
+/public_docs/priv/static/js/*.gz
+/public_docs/priv/static/js/*-*.js
+
+/public_docs/node_modules

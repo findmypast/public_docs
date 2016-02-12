@@ -7,16 +7,29 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Findmypast Related Search API Documentation</title>
+    <title>Findmypast API Documentation</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="shortcut icon" href="http://www.findmypast.com/favicon.ico" />
   </head>
 
   <body>
-    <h2 align="center">Findmypast Related Search API Documentation</h2>
-    <div class="container" role="main">
-
-      <%= render @view_module, @view_template, assigns %>
+    <div style="text-align: center;">
+      <img style="width:300px;" src="http://styleguide.findmypast.com/dist/3653463c28a308062ef498d51eb6d9be.png">
     </div>
+    
+    <h2 align="center">Findmypast API Documentation</h2>
+
+    <div style="text-align: center;">
+     <ul style="list-style-type: none; margin: 0; padding: 0;">
+        <li><a href="/docs/hints-api">Hints API</a></li>
+        <li><a href="/docs/related-search-api">Related Search API</a></li>
+       </ul>
+    </div>
+    <hr/>
+    <div class="container" role="main">
+     
+      <%= render @view_module, @view_template, assigns %>
+      
+    </div>    
   </body>
 </html>
