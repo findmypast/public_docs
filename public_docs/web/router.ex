@@ -16,9 +16,9 @@ defmodule PublicDocs.Router do
   scope "/", PublicDocs do
     pipe_through :browser # Use the default browser stack
 
-    get "/docs", DocumentationController, :index
-    get "/docs/related-search-api", DocumentationController, :xsapi_docs
-    get "/docs/hints-api", DocumentationController, :hints_docs
+    get "/", DocumentationController, :index
+    get "/related-search-api", DocumentationController, :xsapi_docs
+    get "/hints-api", DocumentationController, :hints_docs
   end
 
   # Other scopes may use custom stacks.
