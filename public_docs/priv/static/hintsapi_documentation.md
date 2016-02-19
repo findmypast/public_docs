@@ -90,7 +90,7 @@ Ready to go! Send the request.
 #### Example Response
 ```
 {
-    "Count" : 4,
+    "TotalCount" : 4,
     "Link" : "/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62",
     "RejectedCount": 0,
     "AcceptedCount": 0,
