@@ -90,12 +90,15 @@ Ready to go! Send the request.
 #### Example Response
 ```
 {
-    "Count" : 2,
-    "Link" : "/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62"
+    "TotalCount" : 6,
+    "Link" : "/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62",
+    "RejectedCount": 0,
+    "AcceptedCount": 2,
+    "NewCount": 4
 }
 ```
 
-The link will take the user to see all the records that have matched for that family tree fragment. The count is the amount of results.
+The link will take the user to see all the records that have matched for that family tree fragment. The TotalCount is the total number of record hints found. This is broken down in the NewCount, AcceptedCount and RejectedCount fields to show counts of hints that are 'New' (default status), 'Accepted' and Rejected respectively.
 
 ### ** List of hints **
 
@@ -115,7 +118,7 @@ This endpoint can be used if you wish to display the hints rather than using our
             "DateUpdated" : "2016-02-11T12:49:53.193",
             "FirstName" : "Agnes Sandra T",
             "EventYear" : ​1967,
-            "Status" : null,
+            "Status" : "New",
             "LastName" : "Matthews",
             "Score" : ​84.6526642,
             "UppId" : "BMD/B/1967/2/AZ/000953/149",
@@ -132,7 +135,7 @@ This endpoint can be used if you wish to display the hints rather than using our
             "DateUpdated" : "2016-02-11T12:49:53.193",
             "FirstName" : "Agnes S",
             "EventYear" : ​1991,
-            "Status" : null,
+            "Status" : "New",
             "LastName" : "Matthews",
             "Score" : ​78.15297,
             "UppId" : "BMD/M/1991/9/87279139",
@@ -157,4 +160,20 @@ This endpoint can be used if you wish to display the hints rather than using our
     }
 }
 
+```
+
+### ** Update hint status **
+
+Our third endpoint allows the status of an existing hint to be updated to 'New', 'Accepted' or 'Rejected':
+   https://api.findmypast.com/hints/statusUpdate?hintId=9175540D-158D-449C-AAA4-0202D08B66D2&status=Accepted
+
+You will receive the hintIds of individual hints once you have called the hints/matches endpoint with your family tree fragment.
+
+This endpoint can be used if you wish handle the displaying and categorising of hints rather than using our Hints UI.
+
+#### Example Response
+```
+{
+    "status": "OK"
+}
 ```
