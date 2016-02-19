@@ -101,6 +101,7 @@ Ready to go! Send the request.
 The link will take the user to see all the records that have matched for that family tree fragment. 
 
 Counts
+
 | TotalCount | Total of matches for a specific tree fragment |
 | RejectedCount | Number of matches that user rejected |
 | AcceptedCount | Number of matches that user accepted |
