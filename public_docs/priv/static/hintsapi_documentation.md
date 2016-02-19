@@ -90,12 +90,22 @@ Ready to go! Send the request.
 #### Example Response
 ```
 {
-    "Count" : 2,
-    "Link" : "/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62"
+    "TotalCount" : 4,
+    "Link" : "/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62",
+    "RejectedCount": 0,
+    "AcceptedCount": 0,
+    "NewCount": 4
 }
 ```
 
-The link will take the user to see all the records that have matched for that family tree fragment. The count is the amount of results.
+The link will take the user to see all the records that have matched for that family tree fragment. 
+
+Counts
+
+| TotalCount | Total of matches for a specific tree fragment |
+| RejectedCount | Number of matches that user rejected |
+| AcceptedCount | Number of matches that user accepted |
+| NewCount | Number of matches that user not took action |
 
 ### ** List of hints **
 
