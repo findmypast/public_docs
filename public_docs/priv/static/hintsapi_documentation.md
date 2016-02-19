@@ -90,15 +90,22 @@ Ready to go! Send the request.
 #### Example Response
 ```
 {
-    "TotalCount" : 6,
+    "TotalCount" : 4,
     "Link" : "/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62",
     "RejectedCount": 0,
-    "AcceptedCount": 2,
+    "AcceptedCount": 0,
     "NewCount": 4
 }
 ```
 
-The link will take the user to see all the records that have matched for that family tree fragment. The TotalCount is the total number of record hints found. This is broken down in the NewCount, AcceptedCount and RejectedCount fields to show counts of hints that are 'New' (default status), 'Accepted' and Rejected respectively.
+The link will take the user to see all the records that have matched for that family tree fragment. 
+
+Counts
+
+| TotalCount | Total of matches for a specific tree fragment |
+| RejectedCount | Number of matches that user rejected |
+| AcceptedCount | Number of matches that user accepted |
+| NewCount | Number of matches that user not took action |
 
 ### ** List of hints **
 
