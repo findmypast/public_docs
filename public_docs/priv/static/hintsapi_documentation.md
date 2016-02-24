@@ -171,12 +171,13 @@ This endpoint can be used if you wish to display the hints rather than using our
 
 ### ** Update hint status **
 
-Our third endpoint allows the status of an existing hint to be updated to 'New', 'Accepted' or 'Rejected':
-   https://api.findmypast.com/hints/statusUpdate?hintId=9175540D-158D-449C-AAA4-0202D08B66D2&status=Accepted
+Our third endpoint allows the status of an existing hint to be updated to 'New', 'Accepted' or 'Rejected' using a PUT method:
+        https://api.findmypast.com/hints/{hintId}/status/{status}
+e.g.    https://api.findmypast.com/hints/f12f4025-dac5-420f-ad90-00d99eb96782/status/Accepted
 
 You will receive the hintIds of individual hints once you have called the hints/matches endpoint with your family tree fragment.
 
-This endpoint can be used if you wish handle the displaying and categorising of hints rather than using our Hints UI.
+This endpoint can be used if you wish to handle the displaying and categorising of hints rather than using our Hints UI.
 
 #### Example Response
 ```
