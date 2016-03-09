@@ -3,7 +3,7 @@
 Our Hints API allows you to send us a family tree object and in response we provide records that match that person's fragment of family tree.
 
 To get matches you have do a POST request to the following endpoint:
-	https://api.findmypast.com/hints/matches
+	https://api.findmypast.com/hint-service/matches
 
 An example of a family tree fragment that we expect is below:
 ```
@@ -76,7 +76,7 @@ An example of a family tree fragment that we expect is below:
 ```
 
 Not all of the information in the above family tree fragment is required but, the more you provide the more relevant the results. If you want to refresh hints for a person you need to call the same endpoint passing in the requestId returned on the initial call for that person e.g.
-    https://api.findmypast.com/hints/matches?requestId=9c0a7ce8-bdd0-e511-80ef-005056923b62
+    https://api.findmypast.com/hint-service/matches/9c0a7ce8-bdd0-e511-80ef-005056923b62
 
 Authorization
 We will provide you with an API key to use our API. Include the key in the headers of the request.
@@ -110,9 +110,10 @@ Counts
 ### ** List of hints **
 
 Our second endpoint is to return the list hints that you have received previously for a person in your family tree fragment:
-   https://api.findmypast.com/hints?requestId=9c0a7ce8-bdd0-e511-80ef-005056923b62  
+   https://api.findmypast.com/hint-service/hints/{requestId}  
+   e.g. https://api.findmypast.com/hint-service/hints/9c0a7ce8-bdd0-e511-80ef-005056923b62  
 
-You will receive the requestId once you have called the hints/matches endpoint with your family tree fragment.
+You will receive the requestId once you have called the hint-service/matches endpoint with your family tree fragment.
 
 This endpoint can be used if you wish to display the hints rather than using our Hints UI.
 
@@ -169,11 +170,43 @@ This endpoint can be used if you wish to display the hints rather than using our
 
 ```
 
+### ** Get a hint **
+
+Our third endpoint the details of an existing hint including its status to retrieved using a GET method:
+        https://api.findmypast.com/hint-service/hint/{hintId}
+e.g.    https://api.findmypast.com/hint-service/hint/f12f4025-dac5-420f-ad90-00d99eb96782
+
+You will receive the hintIds of individual hints once you have called the hint-service/matches endpoint with your family tree fragment.
+
+This endpoint can be used if you wish to handle the displaying and categorising of hints rather than using our Hints UI.
+
+#### Example Response
+```
+{
+    "HintId": "f12f4025-dac5-420f-ad90-00d99eb96782",
+    "DateCreated": "2015-07-29T13:55:14.487",
+    "DateUpdated": "2015-07-29T13:55:14.487",
+    "FirstName": "James",
+    "EventYear": ​1916,
+    "Status": "New",
+    "LastName": "Yates",
+    "Score": ​87.5091,
+    "UppId": "BMD/D/1916/2/AZ/001123/080",
+    "RecordMetadataId": "bmd_deaths",
+    "DatasetName": "England & Wales deaths 1837-2007",
+    "SourceCountry": "Great Britain",
+    "SourceCollection": "Life events (BMDs)",
+    "SourceCategory": "Deaths & burials",
+    "Place": "Bury, Lancashire, England",
+    "RequestId": "df9cd815-f135-e511-80ef-005056923b62"
+}
+```
+
 ### ** Update hint status **
 
-Our third endpoint allows the status of an existing hint to be updated to 'New', 'Accepted' or 'Rejected' using a PUT method:
-        https://api.findmypast.com/hints/{hintId}/status/{status}
-e.g.    https://api.findmypast.com/hints/f12f4025-dac5-420f-ad90-00d99eb96782/status/Accepted
+Our fourth endpoint allows the status of an existing hint to be updated to 'New', 'Accepted' or 'Rejected' using a PUT method:
+        https://api.findmypast.com/hint-service/hint/{hintId}/status/{status}
+e.g.    https://api.findmypast.com/hint-service/hint/f12f4025-dac5-420f-ad90-00d99eb96782/status/Accepted
 
 You will receive the hintIds of individual hints once you have called the hints/matches endpoint with your family tree fragment.
 
