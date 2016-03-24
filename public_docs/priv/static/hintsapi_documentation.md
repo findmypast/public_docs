@@ -3,7 +3,12 @@
 Our Hints API allows you to send us a family tree object and in response we provide records that match that person's fragment of family tree.
 
 To get matches you have do a POST request to the following endpoint:
-	https://api.findmypast.com/hint-service/matches
+	https://api.findmypast.com/hint-service/matches/{requestId} or
+    https://api.findmypast.com/hint-service/matches
+
+The requestId is optional and if provided must be a guid that will identify the person that the hints request relates to.
+
+If the requestId is omitted then the api will assign a requestId which is included in the response.
 
 An example of a family tree fragment that we expect is below:
 ```
@@ -75,7 +80,7 @@ An example of a family tree fragment that we expect is below:
 
 ```
 
-Not all of the information in the above family tree fragment is required but, the more you provide the more relevant the results. Dates should be passed as YYYYMMDD but can be passed with MM and DD as 00 if they're not known. If you want to refresh hints for a person you need to call the same endpoint passing in the requestId returned on the initial call for that person e.g.
+Not all of the information in the above family tree fragment is required but, the more you provide the more relevant the results. Dates should be passed as YYYYMMDD but can be passed with MM and DD as 00 if they're not known. Missing information can be left out or passed as null. If you want to refresh hints for a person you need to call the same endpoint passing in the requestId returned on the initial call for that person e.g.
     https://api.findmypast.com/hint-service/matches/9c0a7ce8-bdd0-e511-80ef-005056923b62
 
 Authorization
