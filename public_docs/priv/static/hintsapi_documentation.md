@@ -8,65 +8,65 @@ To get matches you have do a POST request to the following endpoint:
 An example of a family tree fragment that we expect is below:
 ```
 {
-    Person : {
-        GivenNames : "Agnes S",
-        Surnames : "Matthews",
-        BirthDate : 19670401,
-        BirthPlace : "Hertfordshire, England",
-        DeathDate : null,
-        DeathPlace : null,
-        Gender : 2
+    "Person" : {
+        "GivenNames" : "Agnes S",
+        "Surnames" : "Matthews",
+        "BirthDate" : 19670401,
+        "BirthPlace" : "Hertfordshire, England",
+        "DeathDate" : null,
+        "DeathPlace" : null,
+        "Gender" : 2
     },
-    Parent : {
-        MarriageDate : null,
-        MarriagePlace : null,
-        Mother : {
+    "Parent" : {
+        "MarriageDate" : null,
+        "MarriagePlace" : null,
+        "Mother" : {
             "GivenNames" : "Rose",
             "Surnames" : "Matthews",
-            "BirthDate" : 19440401,
+            "BirthDate" : 19440000,
             "BirthPlace" : "Offaly, Ireland",
             "DeathDate" : 20110401,
             "DeathPlace" : "Offaly, Ireland",
             "Gender" : 2
         },
-        Father : {
-            GivenNames : "Brian",
-            Surnames : "Yates",
-            BirthDate : 19410401,
-            BirthPlace : "Offaly, Ireland",
-            DeathDate : 20090401,
-            DeathPlace : "Offaly, Ireland",
-            Gender : 1
+        "Father" : {
+            "GivenNames" : "Brian",
+            "Surnames" : "Yates",
+            "BirthDate" : 19410400,
+            "BirthPlace" : "Offaly, Ireland",
+            "DeathDate" : 20090401,
+            "DeathPlace" : "Offaly, Ireland",
+            "Gender" : 1
         },
-        Siblings : [{
-                GivenNames : "William",
-                Surnames : "Matthews",
-                BirthDate : 19680704,
-                BirthPlace : "Hertfordshire, England",
-                DeathDate : null,
-                DeathPlace : null,
-                Gender : 1
+        "Siblings : [{
+                "GivenNames" : "William",
+                "Surnames" : "Matthews",
+                "BirthDate" : 19680704,
+                "BirthPlace" : "Hertfordshire, England",
+                "DeathDate" : null,
+                "DeathPlace" : null,
+                "Gender" : 1
             }
         ]
     },
-    Spouses : [{
-            GivenNames : "George",
-            Surnames : "Cox",
-            BirthDate : 19650401,
-            BirthPlace : "Essex, England",
-            DeathDate : null,
-            DeathPlace : null,
-            Gender : 1,
-            MarriageDate : 19910601,
-            MarriagePlace : "Essex, England",
-            Childs : [{
-                    GivenNames : "Jane",
-                    Surnames : "Cox",
-                    BirthDate : 19931204,
-                    BirthPlace : "Essex, England",
-                    DeathDate : null,
-                    DeathPlace : null,
-                    Gender : 2
+    "Spouses" : [{
+            "GivenNames" : "George",
+            "Surnames" : "Cox",
+            "BirthDate" : 19650401,
+            "BirthPlace" : "Essex, England",
+            "DeathDate" : null,
+            "DeathPlace" : null,
+            "Gender" : 1,
+            "MarriageDate" : 19910601,
+            "MarriagePlace" : "Essex, England",
+            "Childs" : [{
+                    "GivenNames" : "Jane",
+                    "Surnames" : "Cox",
+                    "BirthDate" : 19931204,
+                    "BirthPlace" : "Essex, England",
+                    "DeathDate" : null,
+                    "DeathPlace" : null,
+                    "Gender" : 2
                 }
             ]
         }
@@ -75,7 +75,7 @@ An example of a family tree fragment that we expect is below:
 
 ```
 
-Not all of the information in the above family tree fragment is required but, the more you provide the more relevant the results. If you want to refresh hints for a person you need to call the same endpoint passing in the requestId returned on the initial call for that person e.g.
+Not all of the information in the above family tree fragment is required but, the more you provide the more relevant the results. Dates should be passed as YYYYMMDD but can be passed with MM and DD as 00 if they're not know. If you want to refresh hints for a person you need to call the same endpoint passing in the requestId returned on the initial call for that person e.g.
     https://api.findmypast.com/hint-service/matches/9c0a7ce8-bdd0-e511-80ef-005056923b62
 
 Authorization
