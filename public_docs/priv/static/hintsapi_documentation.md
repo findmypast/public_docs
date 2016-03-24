@@ -107,6 +107,12 @@ Counts
 | AcceptedCount | Number of matches that user accepted |
 | NewCount | Number of matches that user not took action |
 
+Also you get in the Response a Header of type Cache-Control like this:
+```
+Cache-Control: public, max-age=2592000
+```
+That's the validity of the resource, 30 days.
+
 ### ** List of hints **
 
 Our second endpoint is to return the list hints that you have received previously for a person in your family tree fragment:
