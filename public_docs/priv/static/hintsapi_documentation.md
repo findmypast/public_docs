@@ -103,11 +103,14 @@ Ready to go! Send the request.
 }
 ```
 
-The link should be prefixed with <findmypast-domain>/hints-ui where the findmypast-domain is www.findmypast.com, www.findmypast.co.uk, www.findmypast.com.ie or www.findmypast.com.au, whichever is most appropriate based on the customer's location. For example for a US customer, please use a link like
+The link returned should be prefixed with <findmypast-domain>/hints-ui where the findmypast-domain is www.findmypast.com, www.findmypast.co.uk, www.findmypast.com.ie or www.findmypast.com.au, whichever is most appropriate based on the customer's location. For example for a US customer, please use a link like
 ```
     www.findmypast.com/hints-ui/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62
 ```
-The link will take the user to see all the records that have matched for that family tree fragment. 
+The link will take the user to see all the records that have matched for that family tree fragment. By default, it will initially display hints with a status of new, but this can be overridden using a query string parameter to specify the status of hints to display e.g.
+```
+    www.findmypast.com/hints-ui/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62?status=Accepted
+```
 
 Counts
 
