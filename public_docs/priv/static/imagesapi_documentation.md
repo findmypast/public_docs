@@ -4,13 +4,13 @@ This API provides transcription images.
 
 #### Resource URL:
 The endpoint to call our API is:
-   http://api.findmypast.com/images/
+   http://api.findmypast.com/image/
 
 ####Example Request
 
 ```
 GET
-api.findmypast.com/images/?uppid=GBC/1911/RG78/00004/0009&organisationid=test_organisation_id&utctime=2016-02-29T12:30:30.120Z&hash=56b46375055c10a94456f079dd01965c71b83812
+api.findmypast.com/image/?uppid=GBC/1911/RG78/00004/0009&organisationid=test_organisation_id&utctime=2016-02-29T12:30:30.120Z&hash=56b46375055c10a94456f079dd01965c71b83812
 
 ```
 
