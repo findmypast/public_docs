@@ -8,3 +8,4 @@ Current public APIs documentations included:
 
 - Related Search API
 - Hints API
+- Image API
