@@ -23,7 +23,7 @@
      <ul style="list-style-type: none; margin: 0; padding: 0;">
         <li><a href="hints-api">Hints API</a></li>
         <li><a href="related-search-api">Related Search API</a></li>
-        <li><a href="images-api">Related Search API</a></li>
+        <li><a href="image-api">Image API</a></li>
        </ul>
     </div>
     <hr/>

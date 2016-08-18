@@ -19,7 +19,7 @@ defmodule PublicDocs.Router do
     get "/", DocumentationController, :index
     get "/related-search-api", DocumentationController, :xsapi_docs
     get "/hints-api", DocumentationController, :hints_docs
-    get "/images-api", DocumentationController, :images_docs
+    get "/image-api", DocumentationController, :image_docs
   end
 
   # Other scopes may use custom stacks.

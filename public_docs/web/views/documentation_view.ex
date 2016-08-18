@@ -11,8 +11,8 @@ defmodule PublicDocs.DocumentationView do
     Earmark.to_html(body)
   end
 
-    def images_documentation(_conn) do
-    {:ok, body} = File.read(Application.app_dir(:public_docs, "priv/static") <> "/imagesapi_documentation.md")
+    def image_documentation(_conn) do
+    {:ok, body} = File.read(Application.app_dir(:public_docs, "priv/static") <> "/imageapi_documentation.md")
     Earmark.to_html(body)
   end
 end

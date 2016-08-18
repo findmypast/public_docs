@@ -13,7 +13,7 @@ defmodule PublicDocs.DocumentationController do
     render(conn, "hints_docs.html")
   end
 
-  def images_docs(conn, _params) do
-    render(conn, "images_docs.html")
+  def image_docs(conn, _params) do
+    render(conn, "image_docs.html")
   end
 end
