@@ -34,14 +34,14 @@ The following values used to create a SHA1 hash and the values must be supplied 
 ```
 utctime - 2016-02-29T12:30:30.120Z
 uppid - GBC/1911/RG78/00004/0009
-apikey - c7cd4675d2cd406e926cdff595b5c515
+apikey - <yourApiKey>
 ```
 
 Therefore the hash would be created from the following:
 
 ```
 utctime + uppid + apikey
-2016-02-29T12:30:30.120ZGBC/1911/RG78/00004/0009c7cd4675d2cd406e926cdff595b5c515
+2016-02-29T12:30:30.120ZGBC/1911/RG78/00004/0009<yourApiKey>
 ```
 
 This would result in the following SHA1 hash *56b46375055c10a94456f079dd01965c71b83812*.
