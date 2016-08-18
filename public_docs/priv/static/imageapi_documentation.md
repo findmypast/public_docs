@@ -1,6 +1,6 @@
 ### Image API documentation
 
-This API provides transcription images.
+This API provides images.
 
 #### Resource URL:
 The endpoint to call our API is:
