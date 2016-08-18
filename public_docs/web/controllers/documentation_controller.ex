@@ -12,4 +12,8 @@ defmodule PublicDocs.DocumentationController do
   def hints_docs(conn, _params) do
     render(conn, "hints_docs.html")
   end
+
+  def images_docs(conn, _params) do
+    render(conn, "images_docs.html")
+  end
 end

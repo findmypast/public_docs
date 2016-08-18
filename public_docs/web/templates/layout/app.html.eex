@@ -16,20 +16,21 @@
     <div style="text-align: center;">
       <img style="width:300px;" src="http://www.findmypast.co.uk/images/opengraph/fmp_new_logo.jpg">
     </div>
-    
+
     <h2 align="center">Findmypast API Documentation</h2>
 
     <div style="text-align: center;">
      <ul style="list-style-type: none; margin: 0; padding: 0;">
         <li><a href="hints-api">Hints API</a></li>
         <li><a href="related-search-api">Related Search API</a></li>
+        <li><a href="images-api">Related Search API</a></li>
        </ul>
     </div>
     <hr/>
     <div class="container" role="main">
-     
+
       <%= render @view_module, @view_template, assigns %>
-      
-    </div>    
+
+    </div>
   </body>
 </html>
