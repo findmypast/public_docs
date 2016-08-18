@@ -17,7 +17,7 @@ api.findmypast.com/image/?uppid=GBC/1911/RG78/00004/0009&organisationid=test_org
 #### URL Parameters
 |Parameter|Description|Is required|
 |-|-|-|
-|uppid|Id of requested image. Should be formated as 'book_name/record_set/archive_reference/page_number/sequence_number'|Yes|
+|uppid|Id of requested image. Should be formatted as 'book_name/record_set/archive_reference/page_number/sequence_number'|Yes|
 |organisationid|Id of the organisation. Provided by findmypast. Used to control the access to the image API*.|Yes|
 |utctime|UTC date time. Must be formatted as Zulu Time. Used to check if the url is still valid|Yes|
 |hash|Calculated hash. Used to control the access to the image API. For more details go to the Hash SHA1 section on this page|Yes|
@@ -25,11 +25,11 @@ api.findmypast.com/image/?uppid=GBC/1911/RG78/00004/0009&organisationid=test_org
 
 #### Hash SHA1
 
-The hash is contructed by concatenating utctime, uppid and an API key and hashing this using SHA1 .
+The hash is constructed by concatenating utctime, uppid and an API key and hashing this using SHA1 .
 The API key is provided by findmypast.
 
 **For example:**
-The following values used to create a SHA1 hash and the values must be supplied in the following order.  
+The following values used to create a SHA1 hash and the values must be supplied in the following order.
 
 ```
 utctime - 2016-02-29T12:30:30.120Z
