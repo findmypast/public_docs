@@ -5,8 +5,8 @@
     <description>This is the hub for Findmypast's API documentation</description>
     <link>/public_docs/</link>
     <atom:link href="/public_docs/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Aug 2016 17:00:02 +0100</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 17:00:02 +0100</lastBuildDate>
+    <pubDate>Mon, 22 Aug 2016 17:04:22 +0100</pubDate>
+    <lastBuildDate>Mon, 22 Aug 2016 17:04:22 +0100</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -178,8 +178,8 @@ http://api.findmypast.com/search/category/count?$filter=LastName eq 'Smith' and 
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Mon, 22 Aug 2016 14:01:18 +0100</pubDate>
-        <link>/public_docs/jekyll/update/2016/08/22/xsapi-documentation.html</link>
-        <guid isPermaLink="true">/public_docs/jekyll/update/2016/08/22/xsapi-documentation.html</guid>
+        <link>/public_docs/xsapi-documentation/</link>
+        <guid isPermaLink="true">/public_docs/xsapi-documentation/</guid>
         
         
         <category>jekyll</category>
@@ -270,8 +270,8 @@ apikey - &amp;lt;yourApiKey&amp;gt;
 &lt;p&gt;This will be the value for the hash parameter on the endpoint.&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Aug 2016 14:01:18 +0100</pubDate>
-        <link>/public_docs/jekyll/update/2016/08/22/image-api-documentation.html</link>
-        <guid isPermaLink="true">/public_docs/jekyll/update/2016/08/22/image-api-documentation.html</guid>
+        <link>/public_docs/image-api-documentation/</link>
+        <guid isPermaLink="true">/public_docs/image-api-documentation/</guid>
         
         
         <category>jekyll</category>
@@ -551,8 +551,8 @@ e.g.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 22 Aug 2016 14:01:18 +0100</pubDate>
-        <link>/public_docs/jekyll/update/2016/08/22/hints-api-documentation.html</link>
-        <guid isPermaLink="true">/public_docs/jekyll/update/2016/08/22/hints-api-documentation.html</guid>
+        <link>/public_docs/hints-api-documentation/</link>
+        <guid isPermaLink="true">/public_docs/hints-api-documentation/</guid>
         
         
         <category>jekyll</category>
