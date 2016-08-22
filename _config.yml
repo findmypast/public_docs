@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Findmypast API Documentation
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/public_docs" # the subpath of your site, e.g. /blog
 # Build settings
 markdown: kramdown
 description: This is the hub for Findmypast's API documentation
