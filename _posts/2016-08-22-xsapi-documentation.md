@@ -20,9 +20,12 @@ The query string you pass through must begin with `$filter=` and be in [OData](h
 <a href="http://api.findmypast.com/search/category/count?$filter=LastName%20eq%20barton%20and%20YearOfBirth%20eq%201900">http://api.findmypast.com/search/category/count?$filter=LastName eq barton and YearOfBirth eq 1900</a>
 
 #### Resource URL:
+
+
 ```
 api.findmypast.com/search/category/count
 ```
+
 #### Resource Information
 
 * *Response format:* JSON
@@ -33,7 +36,6 @@ api.findmypast.com/search/category/count
 | Parameter  | Description | Is required |
 | - | - | - |
 | partnerid | *Guid* type of partner id. Provided by findmypast. This is used to track traffic from partners that route back to the FMP site | No |
-
 
 #### URL Parameters
 
