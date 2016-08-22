@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Related Search API documentation</title>
+  <meta name="description" content="Related Search API documentation">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="/jekyll/update/2016/08/22/xsapi-documentation.html">
+  <link rel="alternate" type="application/rss+xml" title="Findmypast API Documentation" href="/feed.xml">
+</head>
+
+
+  <body>
+
+    <div style="text-align: center;">
+  <img style="width:300px;" src="http://www.findmypast.co.uk/images/opengraph/fmp_new_logo.jpg">
+</div>
+
+<h1 align="center">Findmypast API Documentation</h1>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Related Search API documentation</h1>
+    <p class="post-meta"><time datetime="2016-08-22T14:01:18+01:00" itemprop="datePublished">Aug 22, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h3 id="related-search-api-documentation">Related Search API documentation</h3>
+
+<p>The endpoint to call our API is:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>http://api.findmypast.com/search/category/count
+</code></pre>
+</div>
+
+<p>Returns a JSON message containing the total number of records found, a breakdown of the total by category and a URL to display the results.</p>
+
+<p>The query string you pass through must begin with <code class="highlighter-rouge">$filter=</code> and be in <a href="http://www.odata.org/">OData</a> format. Otherwise, the response returned will contain an error message.</p>
+
+<h4 id="example">Example:</h4>
+<p><a href="http://api.findmypast.com/search/category/count?$filter=LastName%20eq%20barton%20and%20YearOfBirth%20eq%201900">http://api.findmypast.com/search/category/count?$filter=LastName eq barton and YearOfBirth eq 1900</a></p>
+
+<h4 id="resource-url">Resource URL:</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>api.findmypast.com/search/category/count
+</code></pre>
+</div>
+<h4 id="resource-information">Resource Information</h4>
+
+<ul>
+  <li><em>Response format:</em> JSON</li>
+  <li><em>Requires authentication:</em> No</li>
+</ul>
+
+<h4 id="header-parameters">Header Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Is required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>partnerid</td>
+      <td><em>Guid</em> type of partner id. Provided by findmypast. This is used to track traffic from partners that route back to the FMP site</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="url-parameters">URL Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Is required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$filter</td>
+      <td>OData type parameter.</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="filter-url-parameter-accepted-odata-format">Filter URL parameter accepted OData format</h4>
+<p>At least one of the parameters is required and all string values must be enclosed by single quotes ( ‘ )</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field*</th>
+      <th>Allowed Operators*</th>
+      <th>Value Type</th>
+      <th>Expression example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FirstName</td>
+      <td>eq</td>
+      <td>String</td>
+      <td>$filter=FirstName eq ‘John’</td>
+    </tr>
+    <tr>
+      <td>LastName</td>
+      <td>eq</td>
+      <td>String</td>
+      <td>$filter=LastName eq ‘Smith’</td>
+    </tr>
+    <tr>
+      <td>YearOfBirth</td>
+      <td>eq <br /> le <br /> ge</td>
+      <td>Int</td>
+      <td>$filter=YearOfBirth eq 1911 <br /> $filter=YearOfBirth le 1945 <br /> $filter=YearOfBirth ge 1956</td>
+    </tr>
+    <tr>
+      <td>YearOfDeath</td>
+      <td>eq <br /> le <br /> ge</td>
+      <td>Int</td>
+      <td>$filter=YearOfDeath eq 1914 <br /> $filter=YearOfDeath le 1948 <br /> $filter=YearOfDeath ge 1959</td>
+    </tr>
+    <tr>
+      <td>KeywordsPlace</td>
+      <td>eq</td>
+      <td>String</td>
+      <td>$filter=KeywordsPlace eq ‘Old Street, London, UK’</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​*<em>Please note these are all case sensitive</em>​</p>
+
+<p>These fields can be combined in any order by the “<em>and</em>” operator, for example:</p>
+
+<p><a href="http://api.findmypast.com/search/category/count?$filter=LastName%20eq%20%27Tolkien%27%20and%20FirstName%20eq%20%27John%20Ronald%20R%27%20and%20YearOfBirth%20eq%201892%20and%20YearOfDeath%20eq%201973%20and%20KeywordsPlace%20eq%20%27Bournemouth,%20Dorset,%20England%27">http://api.findmypast.com/search/category/count?$filter=LastName eq ‘Tolkien’ and FirstName eq ‘John Ronald R’ and YearOfBirth eq 1892 and YearOfDeath eq 1973 and KeywordsPlace eq ‘Bournemouth, Dorset, England’</a></p>
+
+<h4 id="example-request">Example Request</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>GET
+
+http://api.findmypast.com/search/category/count?$filter=LastName eq 'Smith' and FirstName eq 'John'
+</code></pre>
+</div>
+
+<h4 id="example-result">Example Result</h4>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  
+   </span><span class="nt">"TotalCount"</span><span class="p">:</span><span class="mi">1629816</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"ResultUrl"</span><span class="p">:</span><span class="s2">"http://search.findmypast.com/results/world-records?FirstName=John&amp;LastName=Smith"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"Facets"</span><span class="p">:{</span><span class="w">  
+      </span><span class="nt">"SourceCollection"</span><span class="p">:[</span><span class="w">  
+         </span><span class="p">{</span><span class="w">  
+            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"Armed forces &amp; conflict"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Count"</span><span class="p">:</span><span class="mi">63632</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">  
+            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"Census, land &amp; surveys"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Count"</span><span class="p">:</span><span class="mi">807465</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">  
+            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"Churches &amp; religion"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Count"</span><span class="p">:</span><span class="mi">146</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">  
+            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"Education &amp; work"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Count"</span><span class="p">:</span><span class="mi">21348</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">  
+            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"Institutions &amp; organisations"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Count"</span><span class="p">:</span><span class="mi">55109</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">  
+            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"Life events (bmds)"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Count"</span><span class="p">:</span><span class="mi">592500</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">  
+            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"Newspapers, directories &amp; social history"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Count"</span><span class="p">:</span><span class="mi">57183</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">  
+            </span><span class="nt">"Name"</span><span class="p">:</span><span class="s2">"Travel &amp; migration"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Count"</span><span class="p">:</span><span class="mi">32433</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <div align="center">
+      <p>This is the hub for Findmypast's API documentation</p>
+    </div>
+
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

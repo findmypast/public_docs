@@ -1,3 +1,0 @@
-<div>
-  <%= raw(hints_documentation(@conn)) %>
-</div>

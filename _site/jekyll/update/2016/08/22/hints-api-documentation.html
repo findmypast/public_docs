@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hints API documentation</title>
+  <meta name="description" content="Hints API documentation">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="/jekyll/update/2016/08/22/hints-api-documentation.html">
+  <link rel="alternate" type="application/rss+xml" title="Findmypast API Documentation" href="/feed.xml">
+</head>
+
+
+  <body>
+
+    <div style="text-align: center;">
+  <img style="width:300px;" src="http://www.findmypast.co.uk/images/opengraph/fmp_new_logo.jpg">
+</div>
+
+<h1 align="center">Findmypast API Documentation</h1>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Hints API documentation</h1>
+    <p class="post-meta"><time datetime="2016-08-22T14:01:18+01:00" itemprop="datePublished">Aug 22, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h3 id="hints-api-documentation">Hints API documentation</h3>
+
+<p>Our Hints API allows you to send us a family tree object and in response we provide records that match that person’s fragment of family tree.</p>
+
+<p>To get matches you have do a POST request to the following endpoint:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://api.findmypast.com/hint-service/matches/{requestId}
+</code></pre>
+</div>
+<p>or</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://api.findmypast.com/hint-service/matches
+</code></pre>
+</div>
+
+<p>The requestId is optional and if provided must be a guid that will identify the person that the hints request relates to.</p>
+
+<p>If the requestId is omitted then the api will assign a requestId which is included in the response.</p>
+
+<p>An example of a family tree fragment that we expect is below:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"Person"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"GivenNames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Agnes S"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Surnames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthews"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"BirthDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">19670401</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"BirthPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Hertfordshire, England"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"DeathDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"DeathPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Gender"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Parent"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"MarriageDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"MarriagePlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Mother"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"GivenNames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Rose"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Surnames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthews"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"BirthDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">19440000</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"BirthPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Offaly, Ireland"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DeathDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20110401</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DeathPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Offaly, Ireland"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Gender"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"Father"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"GivenNames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Brian"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Surnames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Yates"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"BirthDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">19410400</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"BirthPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Offaly, Ireland"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DeathDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20090401</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DeathPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Offaly, Ireland"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Gender"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"Siblings"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nt">"GivenNames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"William"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"Surnames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthews"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"BirthDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">19680704</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"BirthPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Hertfordshire, England"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"DeathDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"DeathPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"Gender"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Spouses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"GivenNames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"George"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Surnames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Cox"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"BirthDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">19650401</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"BirthPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Essex, England"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DeathDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DeathPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Gender"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"MarriageDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">19910601</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"MarriagePlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Essex, England"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Childs"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="nt">"GivenNames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"Surnames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Cox"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"BirthDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">19931204</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"BirthPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Essex, England"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"DeathDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"DeathPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"Gender"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>Not all of the information in the above family tree fragment is required but, the more you provide the more relevant the results. Dates should be passed as YYYYMMDD but can be passed with MM and DD as 00 if they’re not known. Missing information can be left out or passed as null. If you want to refresh hints for a person you need to call the same endpoint passing in the requestId returned on the initial call for that person e.g.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://api.findmypast.com/hint-service/matches/9c0a7ce8-bdd0-e511-80ef-005056923b62
+</code></pre>
+</div>
+
+<p>Authorization
+We will provide you with an API key to use our API. Include the key in the headers of the request.</p>
+
+<p>Example: 
+   Authorization: Apikey 00000000-0000-0000-0000-000000000000</p>
+
+<p>Ready to go! Send the request.</p>
+
+<h4 id="example-response">Example Response</h4>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"TotalCount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Link"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"RejectedCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"AcceptedCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"NewCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>The link returned should be prefixed with <findmypast-domain>/hints-ui where the findmypast-domain is www.findmypast.com, www.findmypast.co.uk, www.findmypast.com.ie or www.findmypast.com.au, whichever is most appropriate based on the customer's location. For example for a US customer, please use a link like</findmypast-domain></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>    www.findmypast.com/hints-ui/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62
+</code></pre>
+</div>
+<p>The link will take the user to see all the records that have matched for that family tree fragment. By default, it will initially display hints with a status of new, but this can be overridden using a query string parameter to specify the status of hints to display e.g.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>    www.findmypast.com/hints-ui/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62?status=Accepted
+</code></pre>
+</div>
+
+<p>Counts</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>TotalCount</th>
+      <th>Total of matches for a specific tree fragment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RejectedCount</td>
+      <td>Number of matches that user rejected</td>
+    </tr>
+    <tr>
+      <td>AcceptedCount</td>
+      <td>Number of matches that user accepted</td>
+    </tr>
+    <tr>
+      <td>NewCount</td>
+      <td>Number of matches that user not took action</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Also you get in the Response a Header of type Cache-Control like this:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Cache-Control: public, max-age=2592000
+</code></pre>
+</div>
+<p>That’s the validity of the resource, 30 days.</p>
+
+<h3 id="list-of-hints">List of hints</h3>
+
+<p>Our second endpoint is to return the list hints that you have received previously for a person in your family tree fragment: <strong>https://api.findmypast.com/hint-service/hints/{requestId}</strong>
+   e.g.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://api.findmypast.com/hint-service/hints/9c0a7ce8-bdd0-e511-80ef-005056923b62
+</code></pre>
+</div>
+
+<p>You will receive the requestId once you have called the hint-service/matches endpoint with your family tree fragment.</p>
+
+<p>This endpoint can be used if you wish to display the hints rather than using our Hints UI.</p>
+
+<h4 id="example-response-1">Example Response</h4>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"Hints"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"HintId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"f866ef68-1162-4a5c-92ab-a5d0c2974721"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DateCreated"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-11T12:49:53.193"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DateUpdated"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-11T12:49:53.193"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"FirstName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Agnes Sandra T"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"EventYear"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mi">1967</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"New"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"LastName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthews"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Score"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mf">84.6526642</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"UppId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"BMD/B/1967/2/AZ/000953/149"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"RecordMetadataId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bmd_births"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DatasetName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"England &amp; Wales births 1837-2006"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"SourceCountry"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Great Britain"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"SourceCollection"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Life events (BMDs)"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"SourceCategory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Births &amp; baptisms"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Place"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Hitchin, Hertfordshire, England"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"RequestId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9c0a7ce8-bdd0-e511-80ef-005056923b62"</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"HintId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"29040801-ad2d-4f3f-adc8-dcb594acb1da"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DateCreated"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-11T12:49:53.193"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DateUpdated"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-11T12:49:53.193"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"FirstName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Agnes S"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"EventYear"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mi">1991</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"New"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"LastName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthews"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Score"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mf">78.15297</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"UppId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"BMD/M/1991/9/87279139"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"RecordMetadataId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bmd_marriages"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"DatasetName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"England &amp; Wales marriages 1837-2008"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"SourceCountry"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Great Britain"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"SourceCollection"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Life events (BMDs)"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"SourceCategory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Marriages &amp; divorces"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"Place"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Uttlesford, Essex, England"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"RequestId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9c0a7ce8-bdd0-e511-80ef-005056923b62"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Ancestor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"Id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"GivenNames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Agnes S"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Surnames"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthews"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"BirthDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mi">19670401</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"BirthPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Hertfordshire, England"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"DeathDate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"DeathPlace"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Gender"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h3 id="get-a-hint">Get a hint</h3>
+
+<p>Our third endpoint the details of an existing hint including its status to retrieved using a GET method:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://api.findmypast.com/hint-service/hint/{hintId}
+</code></pre>
+</div>
+<p>e.g.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://api.findmypast.com/hint-service/hint/f12f4025-dac5-420f-ad90-00d99eb96782
+</code></pre>
+</div>
+
+<p>You will receive the hintIds of individual hints once you have called the hint-service/matches endpoint with your family tree fragment.</p>
+
+<p>This endpoint can be used if you wish to handle the displaying and categorising of hints rather than using our Hints UI.</p>
+
+<h4 id="example-response-2">Example Response</h4>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"HintId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f12f4025-dac5-420f-ad90-00d99eb96782"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"DateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-29T13:55:14.487"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"DateUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-29T13:55:14.487"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"James"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"EventYear"</span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mi">1916</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yates"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Score"</span><span class="p">:</span><span class="w"> </span><span class="err">​</span><span class="mf">87.5091</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"UppId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BMD/D/1916/2/AZ/001123/080"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"RecordMetadataId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bmd_deaths"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"DatasetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"England &amp; Wales deaths 1837-2007"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"SourceCountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great Britain"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"SourceCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Life events (BMDs)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"SourceCategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deaths &amp; burials"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bury, Lancashire, England"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"RequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df9cd815-f135-e511-80ef-005056923b62"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h3 id="update-hint-status">Update hint status</h3>
+
+<p>Our fourth endpoint allows the status of an existing hint to be updated to ‘New’, ‘Accepted’ or ‘Rejected’ using a PUT method:
+        <strong>https://api.findmypast.com/hint-service/hint/{hintId}/status/{status}</strong>
+e.g.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>https://api.findmypast.com/hint-service/hint/f12f4025-dac5-420f-ad90-00d99eb96782/status/Accepted
+</code></pre>
+</div>
+
+<p>You will receive the hintIds of individual hints once you have called the hints/matches endpoint with your family tree fragment.</p>
+
+<p>This endpoint can be used if you wish to handle the displaying and categorising of hints rather than using our Hints UI.</p>
+
+<h4 id="example-response-3">Example Response</h4>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <div align="center">
+      <p>This is the hub for Findmypast's API documentation</p>
+    </div>
+
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

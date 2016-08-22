@@ -1,3 +1,0 @@
-<div>
-  <%= raw(image_documentation(@conn)) %>
-</div>

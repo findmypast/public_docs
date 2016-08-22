@@ -1,3 +1,0 @@
-<div>
-  <%= raw(xsapi_documentation(@conn)) %>
-</div>
