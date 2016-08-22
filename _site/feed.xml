@@ -5,8 +5,8 @@
     <description>This is the hub for Findmypast's API documentation</description>
     <link>/public_docs/</link>
     <atom:link href="/public_docs/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Aug 2016 17:04:22 +0100</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 17:04:22 +0100</lastBuildDate>
+    <pubDate>Mon, 22 Aug 2016 17:10:40 +0100</pubDate>
+    <lastBuildDate>Mon, 22 Aug 2016 17:10:40 +0100</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -14,6 +14,7 @@
         <description>&lt;h3 id=&quot;related-search-api-documentation&quot;&gt;Related Search API documentation&lt;/h3&gt;
 
 &lt;p&gt;The endpoint to call our API is:&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://api.findmypast.com/search/category/count
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -23,12 +24,15 @@
 &lt;p&gt;The query string you pass through must begin with &lt;code class=&quot;highlighter-rouge&quot;&gt;$filter=&lt;/code&gt; and be in &lt;a href=&quot;http://www.odata.org/&quot;&gt;OData&lt;/a&gt; format. Otherwise, the response returned will contain an error message.&lt;/p&gt;
 
 &lt;h4 id=&quot;example&quot;&gt;Example:&lt;/h4&gt;
+
 &lt;p&gt;&lt;a href=&quot;http://api.findmypast.com/search/category/count?$filter=LastName%20eq%20barton%20and%20YearOfBirth%20eq%201900&quot;&gt;http://api.findmypast.com/search/category/count?$filter=LastName eq barton and YearOfBirth eq 1900&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;resource-url&quot;&gt;Resource URL:&lt;/h4&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;api.findmypast.com/search/category/count
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 &lt;h4 id=&quot;resource-information&quot;&gt;Resource Information&lt;/h4&gt;
 
 &lt;ul&gt;
