@@ -5,8 +5,8 @@
     <description>This is the hub for Findmypast's API documentation</description>
     <link>/public_docs/</link>
     <atom:link href="/public_docs/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Aug 2016 17:17:50 +0100</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 17:17:50 +0100</lastBuildDate>
+    <pubDate>Mon, 22 Aug 2016 17:21:43 +0100</pubDate>
+    <lastBuildDate>Mon, 22 Aug 2016 17:21:43 +0100</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -396,11 +396,14 @@ We will provide you with an API key to use our API. Include the key in the heade
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The link returned should be prefixed with &lt;findmypast-domain&gt;/hints-ui where the findmypast-domain is www.findmypast.com, www.findmypast.co.uk, www.findmypast.com.ie or www.findmypast.com.au, whichever is most appropriate based on the customer's location. For example for a US customer, please use a link like&lt;/findmypast-domain&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    www.findmypast.com/hints-ui/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;www.findmypast.com/hints-ui/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 &lt;p&gt;The link will take the user to see all the records that have matched for that family tree fragment. By default, it will initially display hints with a status of new, but this can be overridden using a query string parameter to specify the status of hints to display e.g.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    www.findmypast.com/hints-ui/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62?status=Accepted
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;www.findmypast.com/hints-ui/#/list/9c0a7ce8-bdd0-e511-80ef-005056923b62?status=Accepted
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -430,9 +433,11 @@ We will provide you with an API key to use our API. Include the key in the heade
 &lt;/table&gt;
 
 &lt;p&gt;Also you get in the Response a Header of type Cache-Control like this:&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cache-Control: public, max-age=2592000
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 &lt;p&gt;That’s the validity of the resource, 30 days.&lt;/p&gt;
 
 &lt;h3 id=&quot;list-of-hints&quot;&gt;List of hints&lt;/h3&gt;
