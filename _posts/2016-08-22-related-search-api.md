@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Related Search API documentation"
+title:  "Related Search API"
 date:   2016-08-22 14:01:18 +0100
 categories: jekyll update
 ---
@@ -70,40 +70,40 @@ http://api.findmypast.com/search/category/count?$filter=LastName eq 'Smith' and 
 #### Example Result
 
 {% highlight json %}
-{  
+{
    "TotalCount":1629816,
    "ResultUrl":"http://search.findmypast.com/results/world-records?FirstName=John&LastName=Smith",
-   "Facets":{  
-      "SourceCollection":[  
-         {  
+   "Facets":{
+      "SourceCollection":[
+         {
             "Name":"Armed forces & conflict",
             "Count":63632
          },
-         {  
+         {
             "Name":"Census, land & surveys",
             "Count":807465
          },
-         {  
+         {
             "Name":"Churches & religion",
             "Count":146
          },
-         {  
+         {
             "Name":"Education & work",
             "Count":21348
          },
-         {  
+         {
             "Name":"Institutions & organisations",
             "Count":55109
          },
-         {  
+         {
             "Name":"Life events (bmds)",
             "Count":592500
          },
-         {  
+         {
             "Name":"Newspapers, directories & social history",
             "Count":57183
          },
-         {  
+         {
             "Name":"Travel & migration",
             "Count":32433
          }

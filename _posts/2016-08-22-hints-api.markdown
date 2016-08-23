@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hints API documentation"
+title:  "Hints API"
 date:   2016-08-22 14:01:18 +0100
 categories: jekyll update
 ---
@@ -90,7 +90,7 @@ An example of a family tree fragment that we expect is below:
 }
 {% endhighlight %}
 
-Not all of the information in the above family tree fragment is required but, the more you provide the more relevant the results. Dates should be passed as YYYYMMDD but can be passed with MM and DD as 00 if they're not known. Missing information can be left out or passed as null. If you want to refresh hints for a person you need to call the same endpoint passing in the requestId returned on the initial call for that person e.g. 
+Not all of the information in the above family tree fragment is required but, the more you provide the more relevant the results. Dates should be passed as YYYYMMDD but can be passed with MM and DD as 00 if they're not known. Missing information can be left out or passed as null. If you want to refresh hints for a person you need to call the same endpoint passing in the requestId returned on the initial call for that person e.g.
 ```
 https://api.findmypast.com/hint-service/matches/9c0a7ce8-bdd0-e511-80ef-005056923b62
 ```
@@ -98,7 +98,7 @@ https://api.findmypast.com/hint-service/matches/9c0a7ce8-bdd0-e511-80ef-00505692
 Authorization
 We will provide you with an API key to use our API. Include the key in the headers of the request.
 
-Example: 
+Example:
    Authorization: Apikey 00000000-0000-0000-0000-000000000000
 
 Ready to go! Send the request.
@@ -145,7 +145,7 @@ That's the validity of the resource, 30 days.
 ### List of hints
 
 Our second endpoint is to return the list hints that you have received previously for a person in your family tree fragment: **https://api.findmypast.com/hint-service/hints/{requestId}**
-   e.g. 
+   e.g.
 ```
 https://api.findmypast.com/hint-service/hints/9c0a7ce8-bdd0-e511-80ef-005056923b62
 ```
@@ -248,7 +248,7 @@ This endpoint can be used if you wish to handle the displaying and categorising 
 
 Our fourth endpoint allows the status of an existing hint to be updated to 'New', 'Accepted' or 'Rejected' using a PUT method:
         **https://api.findmypast.com/hint-service/hint/{hintId}/status/{status}**
-e.g. 
+e.g.
 
 ```
 https://api.findmypast.com/hint-service/hint/f12f4025-dac5-420f-ad90-00d99eb96782/status/Accepted

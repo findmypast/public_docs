@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Image API documentation"
+title:  "Image API"
 date:   2016-08-22 14:01:18 +0100
 categories: jekyll update
 ---
