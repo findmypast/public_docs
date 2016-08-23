@@ -5,8 +5,6 @@ date:   2016-08-22 14:01:18 +0100
 categories: jekyll update
 ---
 
-### Image API documentation
-
 This API provides images.
 
 #### Resource URL:
