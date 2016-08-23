@@ -5,8 +5,6 @@ date:   2016-08-22 14:01:18 +0100
 categories: jekyll update
 ---
 
-### Related Search API documentation
-
 The endpoint to call our API is:
 
 ```
