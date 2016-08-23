@@ -5,8 +5,6 @@ date:   2016-08-22 14:01:18 +0100
 categories: jekyll update
 ---
 
-### Hints API documentation
-
 Our Hints API allows you to send us a family tree object and in response we provide records that match that person's fragment of family tree.
 
 To get matches you have do a POST request to the following endpoint:
