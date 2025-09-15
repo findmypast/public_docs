@@ -1,3 +1,8 @@
+## Status
+
+> [!IMPORTANT]
+> Repository Archived as it is no longer in use, or being actively developed (see [Slack Thread](https://findmypast.slack.com/archives/C044JQ1E8/p1757928435580609)).
+
 Public Docs
 
 Static site for the public API documentation, built on Jekyll.
